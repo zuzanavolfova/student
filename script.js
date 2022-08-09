@@ -5,6 +5,8 @@ const numbers = [0, 10, 1, 7, 2, 9, 11];
 
 const duplicateNumbers = [0, 10, 0, 7, 9, 11, 5];
 
+let numbersUI = document.querySelector(".numbers__field");
+numbersUI.textContent=numbers;
 /*
 Napis funkci, ktera bude prebirat na vstupu pole. Bude vrace true, 
 pokud obsahuje duplikatni cislo, false v opacnem pripade.
@@ -27,7 +29,7 @@ function checkDuplicate (duplicateNumbers){
                     console.log('hura je to tam');
                     return true
                 } else {
-                    console.log(duplicateNumbers[last]+ " " + duplicateNumbers[a] + " " + 'nic')
+                    // console.log(duplicateNumbers[last]+ " " + duplicateNumbers[a] + " " + 'nic')
                     a--;
                 }
             }
@@ -42,10 +44,26 @@ console.log("checkDuplicate" + " " + checkDuplicate(duplicateNumbers));
 Serad cisla v poli vzestupne a vrat vysledek
 */
 
+numbers.sort(sortItems);
+function sortItems(el1, el2) {
+    if (el1 > el2)
+    {return 1;
+    }else {
+        return -1;
+    }
+}
+console.log(numbers)
+
 /*
 Modifikuj predchozi funkci tak, aby slo rozhodnot, zda se radi 
 vzestupne nebo sestupne
 */
+ 
+
+
+
+
+
 
 //const numbers = [];
 
