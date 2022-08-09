@@ -8,8 +8,7 @@ const duplicateNumbers = [0, 10, 0, 7, 9, 11, 5];
 let numbersUI = document.querySelector(".numbers__field");
 numbersUI.textContent=numbers;
 /*
-Napis funkci, ktera bude prebirat na vstupu pole. Bude vrace true, 
-pokud obsahuje duplikatni cislo, false v opacnem pripade.
+Napis funkci, ktera bude prebirat na vstupu pole. Bude vrace true, pokud obsahuje duplikatni cislo, false v opacnem pripade.
 */
 
 function checkDuplicate (duplicateNumbers){
@@ -38,12 +37,9 @@ function checkDuplicate (duplicateNumbers){
 
 console.log("checkDuplicate" + " " + checkDuplicate(duplicateNumbers));
 
-/* fizz buzz */
-
 /* 
 Serad cisla v poli vzestupne a vrat vysledek
 */
-
 
 function sortToMax(el1, el2) {
     if (el1 > el2)
@@ -51,7 +47,6 @@ function sortToMax(el1, el2) {
     }else {
         return -1;
     }
-    
 }
 console.log(numbers);
 function sortToMin(el1, el2) {
@@ -91,7 +86,6 @@ function compare (value1, value2){
 
 console.log(compare(value1, value2));
 
-
 function findMax (numbers){    
     let max = 0;
     for (let i = 0; i < numbers.length; i++){
@@ -119,6 +113,6 @@ function findMin (numbers){
     return min
 }
 
-
-
 console.log(findMin(numbers));
+
+/* fizz buzz */
