@@ -9,9 +9,9 @@
 <body>
     <div class="numbers">Numbers</div>
     <div class="numbers__field"></div>
-    <select name="sort" id="sort">
-        <option value="0">Seřaď vzestupně</option>
-        <option value="1">Seřaď sestupně</option>
+    <select name="sort" id="sort" onchange="sortUI()">
+        <option class="sort__item" value="0">Seřaď vzestupně</option>
+        <option class="sort__item" value="1">Seřaď sestupně</option>
     </select>
     <script src="script.js"></script>
 </body>

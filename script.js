@@ -44,28 +44,41 @@ console.log("checkDuplicate" + " " + checkDuplicate(duplicateNumbers));
 Serad cisla v poli vzestupne a vrat vysledek
 */
 
-numbers.sort(sortItems);
-function sortItems(el1, el2) {
+
+function sortToMax(el1, el2) {
     if (el1 > el2)
     {return 1;
     }else {
         return -1;
     }
+    
 }
-console.log(numbers)
-
+console.log(numbers);
+function sortToMin(el1, el2) {
+    if (el1 < el2)
+    {return 1;
+    }else {
+        return -1;
+    }
+}
+console.log(numbers);
 /*
 Modifikuj predchozi funkci tak, aby slo rozhodnot, zda se radi 
 vzestupne nebo sestupne
 */
  
-
-
-
-
-
-
-//const numbers = [];
+function sortUI (){
+    let option = document.querySelector("select[id=sort]").value;
+    console.log(option);
+    if (option==0){
+        numbers.sort(sortToMax);
+        console.log(numbers)
+    } else {
+        numbers.sort(sortToMin);
+        console.log(numbers)
+    }
+    numbersUI.innerHTML=numbers;
+}
 
 function compare (value1, value2){
     // if (value1>value2){
