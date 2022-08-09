@@ -5,8 +5,9 @@ const numbers = [0, 10, 1, 7, 2, 9, 11];
 
 const duplicateNumbers = [0, 10, 0, 7, 9, 11, 5];
 
+let numbersConst = document.querySelector(".numbers__const");
 let numbersUI = document.querySelector(".numbers__field");
-numbersUI.textContent=numbers;
+numbersConst.textContent=numbers;
 /*
 Napis funkci, ktera bude prebirat na vstupu pole. Bude vrace true, pokud obsahuje duplikatni cislo, false v opacnem pripade.
 */
@@ -124,7 +125,7 @@ function findMin (numbers){
 function fizzBuzz(){
 // 2.najit hodnotu vstupu uzivatele
     let inputFizzBuzz =document.querySelector("input[id=fizzBuzz]").value;
-    let fizzBuzzUI = document.querySelector('.fizzBuzz__Item')
+    let fizzBuzzUI = document.querySelector('.fizzBuzz__item')
 // 3.zjisttit zda je hosnota cislo
 // 4. pokud neni cislo vrati eror
     function checkType (){
