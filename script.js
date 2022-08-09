@@ -127,7 +127,6 @@ function fizzBuzz(){
     let fizzBuzzUI = document.querySelector('.fizzBuzz__Item')
 // 3.zjisttit zda je hosnota cislo
 // 4. pokud neni cislo vrati eror
-    console.log(inputFizzBuzz)
     function checkType (){
     }
     /* 5. pokud je cislo zjistti zda je delitelne 3 a zaroven 5*/
@@ -136,27 +135,21 @@ function fizzBuzz(){
     if (remainder3 === 0 && remainder5 === 0) {
         //pokud plati napsat Fizz Buzz
         fizzBuzzUI.innerHTML = 'Fizz Buzz';
-        console.log('fizzBuzz')
-
     } else {
         //pokud neplati zjistit zda je delitelne 3
         if (remainder3 === 0){
             //pokud plati napsat fizz
             fizzBuzzUI.innerHTML = 'Fizz'
-            console.log('fizz')
         }else {
             //pokud neplati zjistti zda je delitelne 5
             if (remainder5 === 0){
                 // pokud plati napsat buzz
                 fizzBuzzUI.innerHTML = 'Buzz'
-                console.log('buzz')
             } else {
                 //pokud neplati napsat cislo
                 fizzBuzzUI.innerHTML = inputFizzBuzz;
-                console.log(inputFizzBuzz)
             }
         }
     }
 // X. vypsat vysledek do UI
 }
-fizzBuzz()
