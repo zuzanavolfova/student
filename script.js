@@ -195,6 +195,15 @@ function findDuplicate(field, number){
 }
 console.log(findDuplicate(numbers,55))
 
+function findDuplicate2(field, number){
+    for (let index = 0; index < field.length; index++){
+        if (field[index] === number){
+        break
+        }return false
+    } return true
+}
+console.log("find duplicate 2" + " " + findDuplicate2(numbers,55))
+
 /*//function checkDuplicate (duplicateNumbers){
 // zkontroluju jestli je pole naplnene.
 if (!duplicateNumbers.length){
