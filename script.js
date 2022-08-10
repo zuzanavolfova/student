@@ -26,7 +26,6 @@ function checkDuplicate (duplicateNumbers){
         while (a >= 0){
             if (duplicateNumbers[last]===duplicateNumbers[a]){
                 // console.log('hura je to tam');
-                vysledek = true
                 return true;
             } else {
                 // console.log(duplicateNumbers[last]+ " " + duplicateNumbers[a] + " " + 'nic')
@@ -34,11 +33,9 @@ function checkDuplicate (duplicateNumbers){
             }
         }
     }
-    if (vysledek !== true){
-        return false
-    }
-    //TODO dodelat vratit false !!!
+    return false
 }
+    //TODO dodelat vratit false !!!
 
 console.log("checkDuplicate" + " " + checkDuplicate(duplicateNumbers));
 console.log("checkDuplicate" + " " + checkDuplicate(numbers));
@@ -71,7 +68,6 @@ vzestupne nebo sestupne
 // TODO napis si svoji vlastni funkci, ktera bude prebirat pole ktere chces seradit a funkci ci parametr, ktery bude rikat zda sestupne nebo vzestupne.
 // bude vracet nove serazene pole
 // inspirace quicksort, bubble sort
-
 function sortUI (){
     let option = document.querySelector("select[id=sort]").value;
     // console.log(option);
@@ -133,7 +129,7 @@ function findMin (numbers){
 -vstup uzivatele*/
 
 // TODO vypsat vysledek do konzole a vypsat vsechny moznosti od 1 po maximumNumber
-function fizzBuzz(maximumNumber){
+function fizzBuzzPokus(){
 // 2.najit hodnotu vstupu uzivatele
     let inputFizzBuzz =document.querySelector("input[id=fizzBuzz]").value;
     let fizzBuzzUI = document.querySelector('.fizzBuzz__item')
@@ -159,11 +155,72 @@ function fizzBuzz(maximumNumber){
 // X. vypsat vysledek do UI
 }
 
-console.log(fizzBuzz(32));
+
+function fizzBuzz(maximumNumber){
+    fieldFizzBuzz = [];
+    for (let number = 1; number <= maximumNumber; number++) {;
+    //vzit jednicku a zkontrolovat pravidla
+    //opakovat dokud nedosahnu maxima
+    //na konci pricist 1
+    if (number % 3 === 0 && number % 5 === 0) {
+        //pokud plati napsat Fizz Buzz
+        fieldFizzBuzz.push('FizzBuzz');
+    } else if (number % 3 === 0) {
+        //pokud neplati zjistit zda je delitelne 3
+            //pokud plati napsat fizz
+            fieldFizzBuzz.push('Fizz');
+    } else if (number % 5 === 0){
+    //pokud neplati zjistti zda je delitelne 5
+        // pokud plati napsat buzz
+        fieldFizzBuzz.push('Buzz');
+    } else{
+    //pokud neplati napsat cislo
+    fieldFizzBuzz.push(number);}
+    }
+    return fieldFizzBuzz
+}
+console.log(fizzBuzz(35));
 
 
 /* Napis funkci, ktera prebira 2 argumenty - pole cisel, hledane cislo. Funkce vrati true, pokud v poli exsituje alespon jeden vyskyt hledaneho cisla.
    False v opacnem pripade. Najdi nejoptimalnejsi reseni.
+*/
+function findDuplicate(field, number){
+    for (let index = 0; index < field.length; index++){
+        if (field[index] === number){
+        return true
+        }
+    }
+    return false
+}
+
+console.log(findDuplicate(numbers,55))
+
+/*//function checkDuplicate (duplicateNumbers){
+// zkontroluju jestli je pole naplnene.
+if (!duplicateNumbers.length){
+    alert("nejsou zadané hodnoty")
+    return 0
+} 
+//1. vezmu posledni hodnotu a porovnam ji se vsema predchozima.
+let vysledek;
+for (let last = duplicateNumbers.length-1; last>0; last--){
+    /*vezmu druhou hodnotu a porovnam ji.
+    let a = last - 1;
+    while (a >= 0){
+        if (duplicateNumbers[last]===duplicateNumbers[a]){
+            // console.log('hura je to tam');
+            vysledek = true
+            return true;
+        } else {
+            // console.log(duplicateNumbers[last]+ " " + duplicateNumbers[a] + " " + 'nic')
+            a--;
+        }
+    }
+}
+if (vysledek !== true){
+    return false
+}
 */
 
 let inputString = "balaklava";
