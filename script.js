@@ -5,9 +5,9 @@ const numbers = [0, 10, 1, 7, 2, 9, 11];
 
 const duplicateNumbers = [0, 10, 0, 7, 9, 11, 5];
 
-let numbersConst = document.querySelector(".numbers__const");
-let numbersUI = document.querySelector(".numbers__field");
-numbersConst.textContent=numbers;
+//let numbersConst = document.querySelector(".numbers__const");
+//let numbersUI = document.querySelector(".numbers__field");
+//numbersConst.textContent=numbers;
 /*
 Napis funkci, ktera bude prebirat na vstupu pole. Bude vrace true, pokud obsahuje duplikatni cislo, false v opacnem pripade.
 */
@@ -17,26 +17,31 @@ function checkDuplicate (duplicateNumbers){
     if (!duplicateNumbers.length){
         alert("nejsou zadané hodnoty")
         return 0
-    }
+    } 
 /*1. vezmu posledni hodnotu a porovnam ji se vsema predchozima.*/
-        let last = duplicateNumbers.length-1;
-        let a = duplicateNumbers.length-2;
-        for (last; last>0; last--){
-            /*vezmu druhou hodnotu a porovnam ji.*/
-            a = last - 1;
-            while (a>=0){
-                if (duplicateNumbers[last]===duplicateNumbers[a]){
-                    // console.log('hura je to tam');
-                    return true
-                } else {
-                    // console.log(duplicateNumbers[last]+ " " + duplicateNumbers[a] + " " + 'nic')
-                    a--;
-                }
+    let vysledek;
+    for (let last = duplicateNumbers.length-1; last>0; last--){
+        /*vezmu druhou hodnotu a porovnam ji.*/
+        let a = last - 1;
+        while (a >= 0){
+            if (duplicateNumbers[last]===duplicateNumbers[a]){
+                // console.log('hura je to tam');
+                vysledek = true
+                return true;
+            } else {
+                // console.log(duplicateNumbers[last]+ " " + duplicateNumbers[a] + " " + 'nic')
+                a--;
             }
         }
+    }
+    if (vysledek !== true){
+        return false
+    }
+    //TODO dodelat vratit false !!!
 }
 
-// console.log("checkDuplicate" + " " + checkDuplicate(duplicateNumbers));
+console.log("checkDuplicate" + " " + checkDuplicate(duplicateNumbers));
+console.log("checkDuplicate" + " " + checkDuplicate(numbers));
 
 /* 
 Serad cisla v poli vzestupne a vrat vysledek
@@ -63,6 +68,10 @@ Modifikuj predchozi funkci tak, aby slo rozhodnot, zda se radi
 vzestupne nebo sestupne
 */
  
+// TODO napis si svoji vlastni funkci, ktera bude prebirat pole ktere chces seradit a funkci ci parametr, ktery bude rikat zda sestupne nebo vzestupne.
+// bude vracet nove serazene pole
+// inspirace quicksort, bubble sort
+
 function sortUI (){
     let option = document.querySelector("select[id=sort]").value;
     // console.log(option);
@@ -122,35 +131,43 @@ function findMin (numbers){
 /*
 1. Udelat UI
 -vstup uzivatele*/
-function fizzBuzz(){
+
+// TODO vypsat vysledek do konzole a vypsat vsechny moznosti od 1 po maximumNumber
+function fizzBuzz(maximumNumber){
 // 2.najit hodnotu vstupu uzivatele
     let inputFizzBuzz =document.querySelector("input[id=fizzBuzz]").value;
     let fizzBuzzUI = document.querySelector('.fizzBuzz__item')
 // 3.zjisttit zda je hosnota cislo
 // 4. pokud neni cislo vrati eror
-    function checkType (){
-    }
+    // function checkType (){
+    // }
     /* 5. pokud je cislo zjistti zda je delitelne 3 a zaroven 5*/
-    let remainder3 = inputFizzBuzz % 3;
-    let remainder5 = inputFizzBuzz % 5;
-    if (remainder3 === 0 && remainder5 === 0) {
+    if (inputFizzBuzz % 3 === 0 && inputFizzBuzz % 5 === 0) {
         //pokud plati napsat Fizz Buzz
         fizzBuzzUI.innerHTML = 'Fizz Buzz';
-    } else {
+    } else if (inputFizzBuzz % 3 === 0) {
         //pokud neplati zjistit zda je delitelne 3
-        if (remainder3 === 0){
             //pokud plati napsat fizz
-            fizzBuzzUI.innerHTML = 'Fizz'
-        }else {
-            //pokud neplati zjistti zda je delitelne 5
-            if (remainder5 === 0){
-                // pokud plati napsat buzz
-                fizzBuzzUI.innerHTML = 'Buzz'
-            } else {
-                //pokud neplati napsat cislo
-                fizzBuzzUI.innerHTML = inputFizzBuzz;
-            }
-        }
-    }
+        fizzBuzzUI.innerHTML = 'Fizz'
+    } else if (inputFizzBuzz % 5 === 0){
+    //pokud neplati zjistti zda je delitelne 5
+        // pokud plati napsat buzz
+        fizzBuzzUI.innerHTML = 'Buzz'
+    } 
+    //pokud neplati napsat cislo
+    fizzBuzzUI.innerHTML = inputFizzBuzz;
 // X. vypsat vysledek do UI
 }
+
+console.log(fizzBuzz(32));
+
+
+/* Napis funkci, ktera prebira 2 argumenty - pole cisel, hledane cislo. Funkce vrati true, pokud v poli exsituje alespon jeden vyskyt hledaneho cisla.
+   False v opacnem pripade. Najdi nejoptimalnejsi reseni.
+*/
+
+let inputString = "balaklava";
+
+/* Napis funkci, ktera prebira 1 argument - retezec. Funkce vraci soucet vsech znaku minus vsechny vyskyty symbolu 'a'. 
+   Vymysli reseni za pouziti continue.
+*/
