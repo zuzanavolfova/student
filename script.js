@@ -185,7 +185,7 @@ console.log(fizzBuzz(35));
 /* Napis funkci, ktera prebira 2 argumenty - pole cisel, hledane cislo. Funkce vrati true, pokud v poli exsituje alespon jeden vyskyt hledaneho cisla.
    False v opacnem pripade. Najdi nejoptimalnejsi reseni.
 */
-function findDuplicate(field, number){
+function findNumber(field, number){
     for (let index = 0; index < field.length; index++){
         if (field[index] === number){
         return true
@@ -193,43 +193,16 @@ function findDuplicate(field, number){
     }
     return false
 }
-console.log(findDuplicate(numbers,55))
+console.log(findNumber(numbers,55))
 
-function findDuplicate2(field, number){
+function findNumber2(field, number){
     for (let index = 0; index < field.length; index++){
         if (field[index] === number){
         break
         }return false
     } return true
 }
-console.log("find duplicate 2" + " " + findDuplicate2(numbers,55))
-
-/*//function checkDuplicate (duplicateNumbers){
-// zkontroluju jestli je pole naplnene.
-if (!duplicateNumbers.length){
-    alert("nejsou zadané hodnoty")
-    return 0
-} 
-//1. vezmu posledni hodnotu a porovnam ji se vsema predchozima.
-let vysledek;
-for (let last = duplicateNumbers.length-1; last>0; last--){
-    /*vezmu druhou hodnotu a porovnam ji.
-    let a = last - 1;
-    while (a >= 0){
-        if (duplicateNumbers[last]===duplicateNumbers[a]){
-            // console.log('hura je to tam');
-            vysledek = true
-            return true;
-        } else {
-            // console.log(duplicateNumbers[last]+ " " + duplicateNumbers[a] + " " + 'nic')
-            a--;
-        }
-    }
-}
-if (vysledek !== true){
-    return false
-}
-*/
+console.log("find duplicate 2" + " " + findNumber2(numbers,55))
 
 let inputString = "balaklava";
 
