@@ -193,7 +193,6 @@ function findDuplicate(field, number){
     }
     return false
 }
-
 console.log(findDuplicate(numbers,55))
 
 /*//function checkDuplicate (duplicateNumbers){
