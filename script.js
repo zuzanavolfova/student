@@ -204,8 +204,29 @@ function findNumber2(field, number){
 }
 console.log("find duplicate 2" + " " + findNumber2(numbers,55))
 
-let inputString = "balaklava";
-
+// let inputString = "balaklava";
+console.log('----------')
 /* Napis funkci, ktera prebira 1 argument - retezec. Funkce vraci soucet vsech znaku minus vsechny vyskyty symbolu 'a'. 
    Vymysli reseni za pouziti continue.
+
 */
+console.log('Funkce vraci soucet vsech znaku minus vsechny vyskyty symbolu a')
+
+function countStringWithoutA(inputString){
+    //vezmi retezec a spocitej znaky
+    let numberOfLetters = inputString.length;
+    // console.log(numberOfLetters);
+    let numberOfA = 0;
+    //najdi vsechny A aspocitej je
+   for (let i = 0; i < inputString.length; i++ ){
+        if (inputString.charAt(i) === "a"){
+            numberOfA++;
+            continue
+        }
+    }
+    //vypocitej cislo
+    return numberOfLetters - numberOfA 
+    
+}
+console.log(countStringWithoutA('balaklava'))
+console.log('----------')
