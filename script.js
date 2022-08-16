@@ -5,9 +5,9 @@ const numbers = [0, 10, 1, 7, 2, 9, 11];
 
 const duplicateNumbers = [0, 10, 0, 7, 9, 11, 5];
 
-//let numbersConst = document.querySelector(".numbers__const");
-//let numbersUI = document.querySelector(".numbers__field");
-//numbersConst.textContent=numbers;
+let numbersConst = document.querySelector(".numbers__const");
+let numbersUI = document.querySelector(".numbers__field");
+numbersConst.textContent=numbers;
 /*
 Napis funkci, ktera bude prebirat na vstupu pole. Bude vrace true, pokud obsahuje duplikatni cislo, false v opacnem pripade.
 */
@@ -35,10 +35,9 @@ function checkDuplicate (duplicateNumbers){
     }
     return false
 }
-    //TODO dodelat vratit false !!!
 
-console.log("checkDuplicate" + " " + checkDuplicate(duplicateNumbers));
-console.log("checkDuplicate" + " " + checkDuplicate(numbers));
+// console.log("checkDuplicate" + " " + checkDuplicate(duplicateNumbers));
+// console.log("checkDuplicate" + " " + checkDuplicate(numbers));
 
 /* 
 Serad cisla v poli vzestupne a vrat vysledek
@@ -149,15 +148,15 @@ function fizzBuzzPokus(){
     //pokud neplati zjistti zda je delitelne 5
         // pokud plati napsat buzz
         fizzBuzzUI.innerHTML = 'Buzz'
-    } 
+    } else {
     //pokud neplati napsat cislo
-    fizzBuzzUI.innerHTML = inputFizzBuzz;
+    fizzBuzzUI.innerHTML = inputFizzBuzz;}
 // X. vypsat vysledek do UI
 }
 
 
 function fizzBuzz(maximumNumber){
-    fieldFizzBuzz = [];
+    let fieldFizzBuzz = [];
     for (let number = 1; number <= maximumNumber; number++) {;
     //vzit jednicku a zkontrolovat pravidla
     //opakovat dokud nedosahnu maxima
@@ -175,11 +174,11 @@ function fizzBuzz(maximumNumber){
         fieldFizzBuzz.push('Buzz');
     } else{
     //pokud neplati napsat cislo
-    fieldFizzBuzz.push(number);}
+        fieldFizzBuzz.push(number);}
     }
     return fieldFizzBuzz
 }
-console.log(fizzBuzz(35));
+//console.log(fizzBuzz(35));
 
 
 /* Napis funkci, ktera prebira 2 argumenty - pole cisel, hledane cislo. Funkce vrati true, pokud v poli exsituje alespon jeden vyskyt hledaneho cisla.
@@ -188,45 +187,51 @@ console.log(fizzBuzz(35));
 function findNumber(field, number){
     for (let index = 0; index < field.length; index++){
         if (field[index] === number){
-        return true
+            return true
         }
     }
     return false
 }
-console.log(findNumber(numbers,55))
+//const numbers = [0, 10, 1, 7, 2, 9, 11];
 
+//TODO logicka chyba
 function findNumber2(field, number){
-    for (let index = 0; index < field.length; index++){
+    let index = 0;
+    for (index; index < field.length; index++){
         if (field[index] === number){
-        break
-        }return false
+            break
+        } else if (index === field.length-1)
+         { return false
+        }
     } return true
 }
-console.log("find duplicate 2" + " " + findNumber2(numbers,55))
+console.log("find duplicate 2" + " " + findNumber2(numbers,155))
 
 // let inputString = "balaklava";
-console.log('----------')
+// console.log('----------')
 /* Napis funkci, ktera prebira 1 argument - retezec. Funkce vraci soucet vsech znaku minus vsechny vyskyty symbolu 'a'. 
    Vymysli reseni za pouziti continue.
 
 */
-console.log('Funkce vraci soucet vsech znaku minus vsechny vyskyty symbolu a')
+// console.log('Funkce vraci soucet vsech znaku minus vsechny vyskyty symbolu a')
 
 function countStringWithoutA(inputString){
     //vezmi retezec a spocitej znaky
     let numberOfLetters = inputString.length;
     // console.log(numberOfLetters);
     let numberOfA = 0;
-    //najdi vsechny A aspocitej je
+    //najdi vsechny A aspocitej je\
+    let otherSymbols = 0;
    for (let i = 0; i < inputString.length; i++ ){
-        if (inputString.charAt(i) === "a"){
-            numberOfA++;
+        if (inputString.charAt(i) !== "a"){    
+            otherSymbols++;
             continue
         }
+        numberOfA++;
     }
     //vypocitej cislo
     return numberOfLetters - numberOfA 
-    
 }
-console.log(countStringWithoutA('balaklava'))
-console.log('----------')
+// console.log(countStringWithoutA('balaklava'))
+
+// console.log('----------')
